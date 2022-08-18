@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="card text-bg-dark">
+    <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+        class="card-img" alt="..."
+        style="opacity: 0.3;"
+    >
+    <div class="card-img-overlay">
+        <!-- As a heading -->
+        <nav class="navbar bg-transparent">
+            <div class="container-sm">
+            <span class="navbar-brand mb-0 h1 text-white">Weather Forecast</span>
+            </div>
+        </nav>
+        
+        {% if search_forecast %}
+            {% include 'forecast_result.html' %}
+        {% else %}
+            {% include 'search_city.html' %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
